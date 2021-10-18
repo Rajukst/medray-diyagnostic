@@ -16,11 +16,11 @@ const Home = () => {
             <div>
                 <img  className="cover-image" src={cover} alt="" />
             </div>
-
+            <h1 className="mt-5">We Always Provide Best Service For You. CheckOut Our Service !!! </h1>
             <Row xs={1} md={2} lg={3} className="g-4 m-5">
             {
                 service.map(serviceData=> <HomeService
-                key= {serviceData.id}
+                key= {serviceData.img}
                 getData={serviceData}
                 ></HomeService> )
             }

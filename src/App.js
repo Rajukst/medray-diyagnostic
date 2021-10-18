@@ -6,7 +6,8 @@ import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Services from './Components/Service/Services';
 import NotFound from './Components/NotFound/NotFound';
-import About from './Components/About/About';
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
 
 function App() {
   return (
@@ -20,14 +21,14 @@ function App() {
           <Route path="/home">
           <Home></Home>
           </Route>
-          <Route path="/doctors-list">
-
-          </Route>
           <Route path="/service">
           <Services></Services>
           </Route>
-          <Route path="/about">
-            <About></About>
+          <Route path="/login">
+          <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
           </Route>
           <Route path="*">
           <NotFound></NotFound>

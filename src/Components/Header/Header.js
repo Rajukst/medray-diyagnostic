@@ -2,9 +2,11 @@ import React from 'react';
 import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../Images/Header-logo/logo.png'
+import useFirebase from '../Hooks/useFirebase';
 import './Header.css'
 
 const Header = () => {
+ const {user, logOut}= useFirebase()
     return (
         <div className="style-header">
            
@@ -14,14 +16,18 @@ const Header = () => {
        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="me-auto">
+      <Nav className="">
             <Link to="/home"> Home</Link>
             <Link to="/service">Our Services</Link>
           <Link to="/doctors-list">Doctors List</Link>
-        <Link to="/contact-us">Contact Us</Link>
-        <Link to="/ambulance"> Ambulance Service</Link>
+        <Link to="/login">Login</Link> 
+        <div>{user.displayName}</div>
+        {
+          user?.email && <Button onClick={logOut} >Log Out</Button>
+        }
+        
       </Nav>
-    <Form className="d-flex ms-5">
+    <Form className="d-flex ms-3">
 <FormControl
   type="search"
     placeholder="Example: Doctors name"
@@ -30,7 +36,6 @@ const Header = () => {
             />
               <Button className="btn btn-warning text-dark ms-2" variant="outline-danger">Search</Button>
                 </Form>
-                  <Button className="ms-5 btn btn-secondary">Log In</Button>
                 </Navbar.Collapse>
             </Container>
           </Navbar>
