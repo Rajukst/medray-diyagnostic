@@ -1,0 +1,13 @@
+.style-header{
+    align-items: center;
+    justify-content: center;
+}
+.style-header a{
+    text-decoration: none;
+    margin: 20px;
+    font-size: 20px;
+    color: black;
+}
+.style-header a:hover{
+    color:deeppink;
+}
