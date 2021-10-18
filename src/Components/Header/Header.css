@@ -11,3 +11,8 @@
 .style-header a:hover{
     color:deeppink;
 }
+.logo-image{
+    height: 80px;
+    width: 150px;
+    margin-left: 120px;
+}
