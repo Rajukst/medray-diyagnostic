@@ -10,6 +10,7 @@ import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import GetService from './Components/GetService/GetService';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register></Register>
+          </Route>
+          <Route path="/GetService/:serviceId">
+        <GetService></GetService>
           </Route>
           <Route path="*">
           <NotFound></NotFound>

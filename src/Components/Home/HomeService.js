@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './HomeService.css'
 const HomeService = ({getData}) => {
-    const {id, name, description, img}= getData
+    const { name, description, img}= getData
     return (
         <div>
             <div>
@@ -16,7 +16,7 @@ const HomeService = ({getData}) => {
             <Card.Text>
               {description}
             </Card.Text>
-            <Link to="/"><Button variant="outline-primary">Get {name} Service</Button></Link>
+            <Link to="/"><Button variant="outline-primary">Get {name}</Button></Link>
           </Card.Body>
         </Card>
       </Col>

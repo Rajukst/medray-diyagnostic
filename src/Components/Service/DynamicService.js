@@ -14,7 +14,7 @@ const DynamicService = ({myData}) => {
             <Card.Text>
               {description}
             </Card.Text>
-            <Link to="/"><Button variant="outline-primary">Get {name} Service</Button></Link>
+            <Link to={`/GetService/${id}`}><Button variant="outline-primary">Get {name} Service</Button></Link>
           </Card.Body>
         </Card>
       </Col>

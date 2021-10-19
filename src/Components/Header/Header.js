@@ -9,7 +9,6 @@ const Header = () => {
  const {user, logOut}= useAuth();
     return (
         <div className="style-header">
-           
       <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Navbar.Brand href="#home"> <img className="logo-image" src={logo} alt="" /> </Navbar.Brand>
         <Container>
@@ -30,7 +29,7 @@ const Header = () => {
             <img src={user.photoURL} alt="" />
             </div>
             {
-          user?.email && <Button className="btn btn-warning me-5 ms-2" onClick={logOut} >Log Out</Button>
+          user?.email && <Button className="btn btn-warning me-1 ms-2" onClick={logOut} >Log Out</Button>
         }
            
             
