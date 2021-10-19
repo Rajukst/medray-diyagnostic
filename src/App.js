@@ -8,17 +8,19 @@ import Services from './Components/Service/Services';
 import NotFound from './Components/NotFound/NotFound';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+   <AuthProvider>
+   <Router>
         <Header></Header>
         <Switch>
           <Route exact path="/">
           <Home></Home>
           </Route>
-          <Route path="/home">
+          <Route exact path="/home">
           <Home></Home>
           </Route>
           <Route path="/service">
@@ -36,6 +38,7 @@ function App() {
         </Switch>
         <Footer/>
       </Router>
+   </AuthProvider>
     </div>
   );
 }

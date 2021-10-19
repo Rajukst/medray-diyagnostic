@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './HomeService.css'
 const HomeService = ({getData}) => {
-    const {name, description, img}= getData
+    const {id, name, description, img}= getData
     return (
         <div>
             <div>
@@ -15,7 +16,7 @@ const HomeService = ({getData}) => {
             <Card.Text>
               {description}
             </Card.Text>
-            <Button variant="outline-primary">Get Our Service</Button>
+            <Link to={`/home/${id}`}><Button variant="outline-primary">Get {name} Service</Button></Link>
           </Card.Body>
         </Card>
       </Col>

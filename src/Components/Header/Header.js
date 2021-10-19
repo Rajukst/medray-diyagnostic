@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../Images/Header-logo/logo.png'
-import useFirebase from '../Hooks/useFirebase';
+import useAuth from '../Hooks/useAuth';
 import './Header.css'
 
 const Header = () => {
- const {user, logOut}= useFirebase()
+ const {user, logOut}= useAuth();
     return (
         <div className="style-header">
            
@@ -21,23 +21,19 @@ const Header = () => {
             <Link to="/service">Our Services</Link>
           <Link to="/doctors-list">Doctors List</Link>
         <Link to="/login">Login</Link> 
-        <div>{user.displayName}</div>
-        {
-          user?.email && <Button onClick={logOut} >Log Out</Button>
-        }
-        
       </Nav>
-    <Form className="d-flex ms-3">
-<FormControl
-  type="search"
-    placeholder="Example: Doctors name"
-      className="mr-2"
-        aria-label="Search"
-            />
-              <Button className="btn btn-warning text-dark ms-2" variant="outline-danger">Search</Button>
-                </Form>
-                </Navbar.Collapse>
+          </Navbar.Collapse>
             </Container>
+            <div className="me-2">Logged As: {user.displayName}
+            </div>
+            <div className="imgage-div me-1">
+            <img src={user.photoURL} alt="" />
+            </div>
+            {
+          user?.email && <Button className="btn btn-warning me-5 ms-2" onClick={logOut} >Log Out</Button>
+        }
+           
+            
           </Navbar>
         </div>
     );

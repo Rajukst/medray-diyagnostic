@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 
 const Services = () => {
+
     return (
         <div>
-            <h1>This is service Page</h1>
+          
         </div>
     );
 };

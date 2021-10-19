@@ -2,10 +2,11 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import useFirebase from '../Hooks/useFirebase';
+import useAuth from '../Hooks/useAuth';
+
 import './Login.css'
 const Login = () => {
-  const {signWithGoogle}= useFirebase()
+  const {signWithGoogle}= useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
   
