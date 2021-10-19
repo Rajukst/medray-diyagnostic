@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import initialApp from "../../Firebase/firebase.init"
-import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut, createUserWithEmailAndPassword } from "firebase/auth";
 
 initialApp()
 const useFirebase=()=>{
@@ -19,6 +19,7 @@ const useFirebase=()=>{
             setError(error.message)
         })
     }
+    
     const logOut=()=>{
         signOut(auth)
         .then(()=>{
