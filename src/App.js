@@ -11,6 +11,7 @@ import Register from './Components/Register/Register';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import GetService from './Components/GetService/GetService';
+import Doctor from './Doctor/Doctor';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/home">
           <Home></Home>
+          </Route>
+          <Route path="/doctors-list">
+         <Doctor></Doctor>
           </Route>
           <PrivateRoute path="/service">
           <Services></Services>

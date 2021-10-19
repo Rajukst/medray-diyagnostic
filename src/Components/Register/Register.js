@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
+import useAuth from '../Hooks/useAuth';
 
 
 
 const Register = () => {
-    const [email, setEmail]= useState('')
-    const [password, setPassword]= useState('')
-    //handle onSubmit Form
+
+    const {emailPasswordSign}= useAuth()
+
 const registerSubmit=(e)=>{
-console.log(email, password)
+    emailPasswordSign()
 e.preventDefault();
 }
 // hanlding form input value
 const emailField= e=>{
-   setEmail(e.target.value)
+   console.log(e.target.value)
 }
 const passwordFiled=(e)=>{
-    setPassword(e.target.value)
+    console.log(e.target.value)
     }
     return (
         <div>
@@ -34,7 +35,7 @@ const passwordFiled=(e)=>{
             <label htmlFor="mobile"> Mobile Number:</label>
             <input type="text" name="mobile" id="" placeholder="enter your mobile number"  />
             <br /><br />
-            <input type="submit" value="Sign Up" name="Sign Up" />
+            <input onClick={registerSubmit} type="submit" value="Sign Up" name="Sign Up" />
             </form>
         </div>
     );
