@@ -10,16 +10,13 @@ const useFirebase=()=>{
     const auth= getAuth()
 
     const signWithGoogle=()=>{
-        signInWithPopup(auth, googleProvider)
-        .then(result=>{
-            setUser(result.user)
-            console.log(result.user)
-        })
+      return  signInWithPopup(auth, googleProvider)
         .catch(error=>{
             setError(error.message)
         })
     }
-    
+// email password handler
+
     const logOut=()=>{
         signOut(auth)
         .then(()=>{
@@ -35,6 +32,7 @@ const useFirebase=()=>{
     },[])
     return {
         signWithGoogle,
+      
         user,
         error,
         logOut
