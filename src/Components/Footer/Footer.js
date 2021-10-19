@@ -4,7 +4,8 @@ import './Footer.css'
 const Footer = () => {
     return (
         <div className="footer">
-            <p>Hello This is From Footer</p>
+            <p>MedRay Diagnostic Centre. &copy; All Right Reserved. </p>
+            <p>For Any Inquery: medray@diagnostic.com</p>
         </div>
     );
 };
