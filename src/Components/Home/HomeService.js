@@ -16,7 +16,7 @@ const HomeService = ({getData}) => {
             <Card.Text>
               {description}
             </Card.Text>
-            <Link to={`/home/${id}`}><Button variant="outline-primary">Get {name} Service</Button></Link>
+            <Link to="/"><Button variant="outline-primary">Get {name} Service</Button></Link>
           </Card.Body>
         </Card>
       </Col>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import cover from '../../Images/Header-logo/MdeRay.jpg'
+import Services from '../Service/Services';
 import './Home.css'
 import HomeService from './HomeService';
 
@@ -19,11 +20,12 @@ const Home = () => {
             <h1 className="mt-5">We Always Provide Best Service For You. CheckOut Our Service !!! </h1>
             <Row xs={1} md={2} lg={3} className="g-4 m-5">
             {
-                service.map(serviceData=> <HomeService
+                service.slice(0,6).map(serviceData=> <HomeService
                 key= {serviceData.img}
                 getData={serviceData}
-                ></HomeService> )
+                ></HomeService> ) 
             }
+           
             </Row>
         </div>
     );
