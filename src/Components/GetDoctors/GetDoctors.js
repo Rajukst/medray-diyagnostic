@@ -1,15 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import myService from "../../Data/serviceData.json"
-const GetService = () => {
-
+import myDoctors from "../../Data/doctorsData.json"
+const GetDoctors = () => {
     const {serviceId}= useParams()
-   console.log(serviceId)
-    const getServiceID= myService.find(getData=> getData.id===parseInt(serviceId))
+    const getServiceID= myDoctors.find(getData=> getData.id===parseInt(serviceId))
     const {img, name, description}= getServiceID;
-
     return (
-        <div className="mb-5 pb-5">
+        <div>
+              <div className="mb-5 pb-5">
               <div className="w-100">
                 <div className="p-5">
                     <div className="p-1">
@@ -22,7 +20,8 @@ const GetService = () => {
                 </div>
               </div>
         </div>
+        </div>
     );
 };
 
-export default GetService;
+export default GetDoctors;

@@ -12,6 +12,7 @@ import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import GetService from './Components/GetService/GetService';
 import Doctor from './Doctor/Doctor';
+import GetDoctors from './Components/GetDoctors/GetDoctors';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path="/GetService/:serviceId">
         <GetService></GetService>
+          </Route>
+          <Route path="/GetDoctors/:serviceId">
+          <GetDoctors></GetDoctors>
           </Route>
           <Route path="*">
           <NotFound></NotFound>

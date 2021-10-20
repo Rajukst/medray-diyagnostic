@@ -14,10 +14,10 @@ const {handleUser, handlePass, handleUserName, userMobile, emailPasswordSignUp, 
             <input onBlur={handleUserName} type="text" name="Name" id="" placeholder="enter your name" />
             <br /><br />
             <label htmlFor="email">Enter Your email:</label>
-            <input onBlur={handleUser} type="email" name="email" id="" placeholder="enter your email"  />
+            <input onBlur={handleUser} type="email" name="email" id="" placeholder="enter your email" required  />
             <br /><br />
             <label htmlFor="password">Enter Password:</label>
-            <input onBlur={handlePass} type="password" name="password" id="" placeholder="enter your password"  />
+            <input onBlur={handlePass} type="password" name="password" id="" placeholder="enter your password" required  />
             <br /><br />
             <label htmlFor="mobile"> Mobile Number:</label>
             <input onBlur={userMobile} type="text" name="mobile" id="" placeholder="enter your mobile number"  />
