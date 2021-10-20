@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Card, Col, Button } from 'react-bootstrap';
 
 const DynamicDoctor = ({myUse}) => {
     const {name, description, img}= myUse;
@@ -13,7 +13,7 @@ const DynamicDoctor = ({myUse}) => {
             <Card.Text>
               {description}
             </Card.Text>
-            
+            <Button>Appoint Doctor</Button>
           </Card.Body>
         </Card>
       </Col>
