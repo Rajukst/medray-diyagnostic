@@ -2,12 +2,12 @@
 
 ## Our Website Link
 
-[Visit Website] ()
+[Visit Website] (https://kind-heyrovsky-f144ce.netlify.app/)
 
 # Our Vision
-- To make the nation well and sickless.
+- To keep all people healthy and disease free.
 
 # Our Mission
-- Spical Care
-- Complete Guideline
+- Spical Care.
+- Giving maximum service to the patient.
 - Good Supervision
