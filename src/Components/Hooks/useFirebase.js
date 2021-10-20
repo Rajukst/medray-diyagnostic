@@ -4,12 +4,17 @@ import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut
 
 initialApp()
 const useFirebase=()=>{
-    const [user, setUser]= useState({})
-    const [error, setError]= useState('')
-    const [email, setEmail]= useState('')
-    const [password, setPassword]= useState('')
     const googleProvider= new GoogleAuthProvider()
     const auth= getAuth()
+
+    const [user, setUser]= useState({})
+    const [error, setError]= useState('')
+    const [regError, setRegError]= useState('')
+    const [email, setEmail]= useState('')
+    const [password, setPassword]= useState('')
+    const [userName, setUserName]= useState('')
+    const [mobile, setMobile]= useState('')
+  
 
     const signWithGoogle=()=>{
       return  signInWithPopup(auth, googleProvider)
@@ -18,15 +23,27 @@ const useFirebase=()=>{
         })
     }
 // email password handler
-const emailPasswordSignIn=(e)=>{
+// (emailPasswordSignUp is register button)
+const emailPasswordSignUp=(e)=>{
     e.preventDefault()
-    signInWithEmailAndPassword(auth, email, password)
-    .then ((result)=>{
-       setEmail(result.user)
+    if(password.length<6){
+       setRegError('password should be at least 6 characters')
+        return;
+    }
+    console.log(email, password, userName, mobile)
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(result=>{
+        const user= result.user
+        console.log(user)
     })
-    .catch((error)=>{
-        setError(error.message)
-    })
+    
+}
+
+const handleUserName=e =>{
+    setUserName(e.target.value)
+}
+const userMobile= e=>{
+    setMobile(e.target.value)
 }
 
 const handleUser= e=>{
@@ -35,7 +52,6 @@ const handleUser= e=>{
 const handlePass= e=>{
     setPassword(e.target.value)
 }
-
 
     const logOut=()=>{
         signOut(auth)
@@ -54,9 +70,12 @@ const handlePass= e=>{
         signWithGoogle,
         handlePass,
         handleUser,
+        handleUserName,
+        userMobile,
         user,
         error,
-        emailPasswordSignIn,
+        regError,
+        emailPasswordSignUp,
         logOut
     }
 }
