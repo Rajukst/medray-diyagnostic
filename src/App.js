@@ -13,6 +13,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import GetService from './Components/GetService/GetService';
 import Doctor from './Doctor/Doctor';
 import GetDoctors from './Components/GetDoctors/GetDoctors';
+import About from './Components/About/About';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           <Route path="/login">
           <Login></Login>
           </Route>
+          <PrivateRoute path="/about-us">
+        <About></About>
+          </PrivateRoute>
           <Route path="/register">
             <Register></Register>
           </Route>
