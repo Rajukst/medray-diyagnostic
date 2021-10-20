@@ -22,8 +22,10 @@ const {handleUser, handlePass, handleUserName, userMobile, emailPasswordSignUp, 
             <label htmlFor="mobile"> Mobile Number:</label>
             <input onBlur={userMobile} type="text" name="mobile" id="" placeholder="enter your mobile number"  />
             <br /><br />
-            <input type="submit" value="Sign Up" name="Sign Up" />
             <div className="text-danger" >{regError}</div>
+            <br /><br />
+            <input type="submit" value="Sign Up" name="Sign Up" />
+           
             </form>
         </div>
     );

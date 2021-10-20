@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button, InputGroup } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
+
 
 import './Login.css'
 const Login = () => {
@@ -23,7 +24,7 @@ const Login = () => {
             <h1 className="mb-5">Please Login</h1>
             <form>
             <label htmlFor="email">Enter Your email:</label>
-            <input type="email" name="email" id="" placeholder="enter your email"  />
+            <input  type="email" name="email" id="" placeholder="enter your email"  />
             <br /><br />
             <label htmlFor="password">Enter Password:</label>
             <input type="password" name="password" id="" placeholder="enter your password"  />

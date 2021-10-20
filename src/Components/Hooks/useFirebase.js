@@ -14,7 +14,7 @@ const useFirebase=()=>{
     const [password, setPassword]= useState('')
     const [userName, setUserName]= useState('')
     const [mobile, setMobile]= useState('')
-  
+
 
     const signWithGoogle=()=>{
       return  signInWithPopup(auth, googleProvider)
@@ -22,7 +22,7 @@ const useFirebase=()=>{
             setError(error.message)
         })
     }
-// email password handler
+// email password register handler
 // (emailPasswordSignUp is register button)
 const emailPasswordSignUp=(e)=>{
     e.preventDefault()
@@ -35,10 +35,13 @@ const emailPasswordSignUp=(e)=>{
     .then(result=>{
         const user= result.user
         console.log(user)
+        setRegError('')
     })
-    
+    .catch(error=>{
+        setRegError(error.message)
+    })
 }
-
+// handleing all registron form inputs:
 const handleUserName=e =>{
     setUserName(e.target.value)
 }
@@ -52,6 +55,12 @@ const handleUser= e=>{
 const handlePass= e=>{
     setPassword(e.target.value)
 }
+
+// email password register handler
+// (emailPasswordSignUp is register button)
+ 
+
+
 
     const logOut=()=>{
         signOut(auth)
