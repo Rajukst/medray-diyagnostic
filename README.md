@@ -10,4 +10,4 @@
 # Our Mission
 - Spical Care.
 - Giving maximum service to the patient.
-- Good Supervision
+- Good Supervision"# medray-diyagnostic" 
